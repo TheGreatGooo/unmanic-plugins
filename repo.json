@@ -1,0 +1,30 @@
+{
+    "repo": {
+        "id": "repository.unofficial",
+        "name": "unOfficial Repo",
+        "icon": "",
+        "repo_data_directory": "https://raw.githubusercontent.com/TheGreatGooo/unmanic-plugins/repo/",
+        "repo_data_url": "https://raw.githubusercontent.com/TheGreatGooo/unmanic-plugins/repo/repo.json"
+    },
+    "plugins": [
+        {
+            "author": "TheGreatGooo",
+            "compatibility": [
+                1,
+                2
+            ],
+            "description": "Filter video format for sheild tv pro",
+            "id": "shield_compatibility",
+            "name": "video format for sheild tv pro",
+            "platform": [
+                "all"
+            ],
+            "priorities": {
+                "on_library_management_file_test": 99,
+                "on_worker_process": 2
+            },
+            "tags": "sheild,library file test",
+            "version": "1.0.0"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "author": "TheGreatGooo",
+    "compatibility": [
+        1,
+        2
+    ],
+    "description": "Filter video format for sheild tv pro",
+    "id": "shield_compatibility",
+    "name": "video format for sheild tv pro",
+    "platform": [
+        "all"
+    ],
+    "priorities": {
+        "on_library_management_file_test": 99,
+        "on_worker_process": 2
+    },
+    "tags": "sheild,library file test",
+    "version": "1.0.0"
+}
