@@ -115,12 +115,11 @@ def on_library_management_file_test(data):
     if probe_data.file(abspath):
         probe_streams=probe_data.get_probe()["streams"]
         probe_format = probe_data.get_probe()["format"]
+        is_hevc = file_has_metadata(abspath, probe_streams, probe_format, "codec_name", "hevc")
+        is_h264 = file_has_metadata(abspath, probe_streams, probe_format, "codec_name", "h264")
+        is_ten_bit = file_has_metadata(abspath, probe_streams, probe_format, "pix_fmt", "yuv420p10le")
+        if (is_hevc or is_h264) and not is_ten_bit :
+            data['add_file_to_pending_tasks'] = False
     else:
         logger.debug("Probe data failed - Blocking everything.")
-        return True
-
-    is_hevc = file_has_disallowed_metadata(abspath, probe_streams, probe_format, "codec_name", "hevc")
-    is_h264 = file_has_disallowed_metadata(abspath, probe_streams, probe_format, "codec_name", "h264")
-    is_ten_bit = file_has_disallowed_metadata(abspath, probe_streams, probe_format, "pix_fmt", "yuv420p10le")
-    if (is_hevc or is_h264) and not is_ten_bit :
         data['add_file_to_pending_tasks'] = False
